@@ -1,13 +1,13 @@
 INSERT INTO `racoma-data`.`radios`
-(`radio_id`,
-`radio_name`,
-`radio_estation`,
-`radio_path_logo`,
-`radio_adress`,
-`radio_telephone`,
-`radio_facebook`,
-`radio_twitter`,
-`radio_email`)
+(`id`,
+`name`,
+`estation`,
+`path_logo`,
+`adress`,
+`telephone`,
+`facebook_url`,
+`twitter_url`,
+`email`)
 VALUES
 (
 1,
@@ -26,10 +26,10 @@ VALUES
 #------------------------------------------
 
 INSERT INTO `racoma-data`.`users`
-(`user_id`,
-`user_username`,
-`user_password`,
-`user_type`)
+(`id`,
+`username`,
+`password`,
+`type`)
 VALUES
 (
 1,
@@ -44,13 +44,13 @@ VALUES
 #------------------------------------------
 
 INSERT INTO `racoma-data`.`programs`
-(`program_id`,
-`program_name`,
-`program_hour_start`,
-`program_duration`,
-`program_description`,
-`program_path_logo`,
-`program_calendar`)
+(`id`,
+`name`,
+`hour_start`,
+`duration`,
+`description`,
+`path_logo`,
+`calendar`)
 VALUES
 (
 1,
@@ -109,11 +109,12 @@ cuatro años de aire no se puede dudar de su calidad',
 
 
 INSERT INTO `racoma-data`.`news`
-(`new_id`,
-`new_creation_date`,
-`new_content`,
-`new_path_image`,
-`users_user_id`)
+(`id`,
+`creation_date`,
+`content`,
+`path_image`,
+`user_id`,
+`title`)
 VALUES
 (
 1,
@@ -122,7 +123,8 @@ CURRENT_TIMESTAMP,
 el contenido de esta noticia es solo a fines de que se pueda ver algo
 y nada mas que eso',
 '',
-1
+1,
+'Noticia 1'
 ),
 (
 2,
@@ -131,7 +133,8 @@ CURRENT_TIMESTAMP,
 el contenido de esta noticia es solo a fines de que se pueda ver algo
 y nada mas que eso',
 '',
-1
+1,
+'Noticia 2'
 ),
 (
 3,
@@ -140,6 +143,7 @@ CURRENT_TIMESTAMP,
 el contenido de esta noticia es solo a fines de que se pueda ver algo
 y nada mas que eso',
 '',
-1
+1,
+'Noticia 3'
 );
 

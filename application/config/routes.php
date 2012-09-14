@@ -37,9 +37,15 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
-$route['default_controller'] = "welcome";
-$route['404_override'] = '';
+$route['contact'] = 'contact';
+$route['about'] = 'about';
+$route['shows'] = 'shows';
+$route['news/create'] = 'news/create';
+$route['news/view/(:num)'] = 'news/view/$1';
+$route['news/(:any)'] = 'news';
+$route['news'] = 'news';
+$route['(:any)'] = 'home/view/$1';
+$route['default_controller'] = 'home';
 
 
 /* End of file routes.php */
