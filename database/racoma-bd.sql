@@ -85,12 +85,13 @@ DROP TABLE IF EXISTS `racoma-data`.`broadcasters` ;
 
 CREATE  TABLE IF NOT EXISTS `racoma-data`.`broadcasters` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `first_name` VARCHAR(45) NULL ,
-  `last_name` VARCHAR(25) NULL ,
+  `first_name` VARCHAR(45) NOT NULL ,
+  `last_name` VARCHAR(25) NOT NULL ,
   `email` VARCHAR(45) NULL ,
   `bio` TEXT NULL ,
   `facebook_url` VARCHAR(45) NULL ,
   `twitter_url` VARCHAR(45) NULL ,
+  `profile_photo` VARCHAR(45) NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 

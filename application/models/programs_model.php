@@ -1,12 +1,12 @@
 <?php
-class News_model extends CI_Model {
+class Programs_model extends CI_Model {
 
     public function __construct()
     {
         $this->load->database();
         #$this->load->helper("url");
     }
-    
+    /*
     public function count_news()
     {
         return $this->db->count_all('news');
@@ -15,25 +15,30 @@ class News_model extends CI_Model {
     public function get_news_limited($limit, $start) 
     {
           $this->db->limit($limit, $start);
-          $this->db->order_by('creation_date', 'DESC');
           $query = $this->db->get('news');
    
           if ($query->num_rows() > 0) return $query->result_array();
           return false;
     }
+    */
     
-    public function get_news($id = FALSE)
+    public function get_current_show($hour)
+    {
+        
+    }
+    
+    public function get_shows($id = FALSE)
     {
         if ($id === FALSE)
             {
-                $query = $this->db->get('news');
+                $query = $this->db->get('programs');
                 return $query->result_array();
             }
         
-        $query = $this->db->get_where('news', array('id' => $id));
+        $query = $this->db->get_where('programs', array('id' => $id));
         return $query->row_array();
     }
-    
+    /*
     public function set_news()
     {
         $this->load->helper('url');
@@ -48,7 +53,5 @@ class News_model extends CI_Model {
         
         return $this->db->insert('news', $data);
     }
+    */
 }
-
-/* End of file news_model.php */
-/* Location: ./application/models/ */

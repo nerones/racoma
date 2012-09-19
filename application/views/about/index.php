@@ -1,1 +1,1 @@
-<strong>aboiut</strong>
+<strong>about</strong>

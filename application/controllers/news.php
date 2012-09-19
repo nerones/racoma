@@ -7,12 +7,14 @@ class News extends CI_Controller {
         $this->load->model('news_model');
         $this->load->helper('url');
         $this->menu = menu_ul('news');
+        $this->load->library('session');
     }
 
     public function index()
     {
         $this->load->helper('text');
         $this->load->library('pagination');
+        
 
         $config['base_url'] = site_url().'/news/';
         $config['total_rows'] = $this->news_model->count_news();
@@ -27,6 +29,7 @@ class News extends CI_Controller {
         $data['menu'] = menu_ul('news');
         $page = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
         $data['news'] = $this->news_model->get_news_limited($config['per_page'],$page);
+        
         $this->load->view('templates/header', $data);
         $this->load->view('news/index', $data);
         $this->load->view('templates/footer');

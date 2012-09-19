@@ -24,7 +24,12 @@ $config['navigation'] = array(
             'contact' => array(
                 'title'  => 'Contacto',
                 'link'   => 'contact'
+            ),
+            'auth' => array(
+                'title'  => 'Administrar',
+                'link'   => 'auth/login'
             )
+            
         );
 
 /* End of file navigation.php */

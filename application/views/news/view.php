@@ -4,5 +4,5 @@
             <?php echo $news_item['content'] ?>
             <?php echo $news_item['id'] ?>
         </div>
-        <p><?php echo anchor("news/$news_item[id]",'Ver noticia')?></p>
+        <p>Permalink <?php echo anchor("news/view/$news_item[id]",'Ver noticia')?></p>
     </div>
