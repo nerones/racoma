@@ -224,6 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
+//TODO change this when deploy.
 $config['encryption_key'] = 'sdfaisdbvafpvbfòvaavrt87465465466rty45y4y';
 
 /*

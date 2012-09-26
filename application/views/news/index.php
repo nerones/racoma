@@ -9,7 +9,11 @@
         <span>
             <?php echo anchor("news/view/$news_item[id]",'Ver noticia')?>
             | Creado el
-            <?php echo $news_item['creation_date'] ?>    
+            <?php 
+            echo $news_item['creation_date'];
+            if (isset($autenticated)) echo '| '.anchor("admin/news/edit/$news_item[id]", 'Editar'); 
+            ?>
+                
         </span>
     </div>
 

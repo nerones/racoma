@@ -22,10 +22,12 @@ $config['navigation'] = array(
                 'link'   => 'about'
             ),
             'contact' => array(
+                'id'     => 'contact',
                 'title'  => 'Contacto',
                 'link'   => 'contact'
             ),
             'auth' => array(
+                'id'     => 'auth',
                 'title'  => 'Administrar',
                 'link'   => 'auth/login'
             )

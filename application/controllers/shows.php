@@ -9,6 +9,10 @@ class Shows extends CI_Controller {
         
         $this->load->helper(array ('url','various'));
         $this->menu = menu_ul('shows');
+        if ($this->session->userdata('validated')) 
+        { 
+          $this->load->vars( array('autenticated' => $this->session->userdata('username')) );  
+        }
     }
 
     public function index()

@@ -25,7 +25,12 @@
         <img src="<?php echo 'www/img/trial-logo.jpeg'?>" class="title_logo" width="90px" height="90px">
         <h1><?php echo 'Radio Livre!'?></h1>
         <h4><?php echo 'La radio del norte'?></h4>
+        <?php if (isset($autenticated)) {?>
+        <p style="text-align: right; font-size: 10px;">Logueado como admin
+        
+        <?php echo anchor('auth/logout','Salir').'</p>';}?>
     </div>
+    
     <!-- area derecha sub menu -->
     <div class="left_area">
         <!--<ul>

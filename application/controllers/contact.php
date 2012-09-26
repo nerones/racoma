@@ -6,6 +6,10 @@ class Contact extends CI_Controller {
         parent::__construct();
         //$this->load->model('news_model');
         $this->load->helper('url');
+        if ($this->session->userdata('validated')) 
+        { 
+          $this->load->vars( array('autenticated' => $this->session->userdata('username')) );  
+        }
     }
 
     public function index()

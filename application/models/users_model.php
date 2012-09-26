@@ -10,7 +10,7 @@ class Users_model extends CI_Model{
         $username = $this->input->post('identity');
         //TODO play with md5 to store de password
         $password = $this->input->post('password');
-         
+        $password = md5($password.md5($username)); 
         $this->db->where('username', $username);
         $this->db->where('password', $password);
         $query = $this->db->get('users');

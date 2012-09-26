@@ -8,11 +8,15 @@ class Home extends CI_Controller {
         $this->load->helper(array ('url','text'));
         $this->load->model('news_model');
         $this->load->model('programs_model');
+        if ($this->session->userdata('validated')) 
+        { 
+          $this->load->vars( array('autenticated' => $this->session->userdata('username')) );  
+        }  
     }
 
     public function index()
     {
-    
+        
         $data['title'] = 'Inicio';//ucfirst($page); // Capitalize the first letter
         $data['menu'] = menu_ul('home');
         $data['news'] = $this->news_model->get_news_limited(3,0);

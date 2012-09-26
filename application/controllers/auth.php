@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 class Auth extends CI_Controller {
     
@@ -8,7 +8,6 @@ class Auth extends CI_Controller {
         $this->load->helper('url');
         $this->load->model('users_model');
         $this->menu = menu_ul('auth');
-        $this->load->library('session');
     }
 
     function index() 
@@ -16,13 +15,14 @@ class Auth extends CI_Controller {
         if ($this->session->userdata('validated')) {
             echo 'hola admin';
         }
-        //redirect('/');
+        redirect('/');
     }
 
     function login() 
     {
-
+        if ($this->session->userdata('validated')) redirect('admin');
         $data['menu'] = $this->menu;
+        
         $data['title'] = 'Ingresar como administrador';
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -39,7 +39,7 @@ class Auth extends CI_Controller {
         else
         {
             if (! $this->users_model->validate()) redirect('auth/login');
-            else redirect('news');
+            else redirect('admin');
         }
         
         /*
@@ -52,7 +52,7 @@ class Auth extends CI_Controller {
 
     function logout() 
     {   //Basic Ion_Auth Logout function
-        $this->ion_auth->logout();
+        $this->session->sess_destroy();
         redirect('/');
     }
 

@@ -6,6 +6,9 @@
  */
 if ( ! function_exists('menu_ul'))
 {
+    /**
+     * The parameter $sel highlights the item of the array that match with the 'id' field
+     */
     function menu_ul($sel = 'home')
    {
         $CI =& get_instance();
@@ -13,7 +16,7 @@ if ( ! function_exists('menu_ul'))
         $menu = '<ul class="main_nav">'."\n";
         foreach($items as $item)
         {
-            $current = (in_array($sel, $item)) ? ' class="current"' : '';
+            $current = ($item['id'] === $sel) ? ' class="current"' : '';
             $id = (!empty($item['id'])) ? ' id="'.$item['id'].'"' : '';
             //$menu .= '<li'.$current.'><a href="'.$item['link'].'"'.$id.'>'.$item['title'].'</a></li>'."\n";
             $menu .= '<li'.$current.'>'.anchor($item['link'],$item['title'],$id).'</li>'."\n";
